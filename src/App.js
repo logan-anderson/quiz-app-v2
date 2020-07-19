@@ -12,7 +12,7 @@ const App = () => {
         // @ts-ignore
         value={themeHook}
       >
-        <div>
+        <div className="container mx-auto">
           <header>
             <nav className="flex flex-wrap items-center justify-between p-4">
               <div className="lg:order-2 w-auto lg:w-1/5 lg:text-center">
