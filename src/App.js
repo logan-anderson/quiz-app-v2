@@ -16,7 +16,7 @@ const App = () => {
           <header>
             <nav className="flex flex-wrap items-center justify-between p-4">
               <div className="lg:order-2 w-auto lg:w-1/5 lg:text-center">
-                <Link to="/" className="text-xl text-indigo-500 font-semibold" href="#">Dunder Mifflin</Link>
+                <Link to="/quiz-app-v2" className="text-xl text-indigo-500 font-semibold" href="#">Dunder Mifflin</Link>
               </div>
               <div className="block lg:hidden">
                 <button className="navbar-burger flex items-center py-2 px-3 text-indigo-500 rounded border border-indigo-500">
@@ -30,7 +30,7 @@ const App = () => {
               <div className="navbar-menu hidden lg:order-3 lg:block w-full lg:w-2/5 lg:text-right"><a className="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-blue-700" href="#">Blog</a><a className="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-blue-700" href="#">FAQ</a><a className="block lg:inline-block mt-4 lg:mt-0 text-blue-900 hover:text-blue-700" href="#">Contact</a></div>
             </nav>
           </header>
-          <Router>
+          <Router basepath='/quiz-app-v2'>
             <Home
               // @ts-ignore
               path="/"

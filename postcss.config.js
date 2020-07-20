@@ -1,32 +1,29 @@
-const tailwind = require('tailwindcss')
-
-const IS_DEV = process.env.NODE_ENV === 'production'
-
-const plugins = [tailwind]
-
-if (!IS_DEV) {
-    const purgecss = require('@fullhuman/postcss-purgecss')
-
-    class TailWindExtractor {
-        static extract(context) {
-            return context.match(/[A-z0-9-:\/]+/g) || [];
-        }
+class TailwindExtractor {
+    static extract(content) {
+        return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
     }
-    plugins.push(
-        purgecss({
-            content: ['src/*.html', 'src/*.js', 'src/*.tsx'],
-            extractors: [
-                {
-                    extractor: TailWindExtractor,
-                    extensions: ['html', 'js']
-                }
-            ]
-
-        })
-
-    )
 }
 
 module.exports = {
-    plugins: plugins
+    plugins: [
+        require('postcss-import'),
+        require('postcss-nested'),
+        require('postcss-preset-env')({
+            browsers: ['>0.25%', 'not ie 11', 'not op_mini all']
+        }),
+        require('tailwindcss')('./tailwind.js'),
+        process.env.NODE_ENV === 'production'
+            ? require('postcss-purgecss')({
+                content: ['./index.html'],
+                extractors: [
+                    {
+                        extractor: TailwindExtractor,
+                        extensions: ["html", "js"]
+                    }
+                ]
+            })
+            : function () {
+                return []
+            }
+    ]
 }
