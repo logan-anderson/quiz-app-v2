@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router, Link } from '@reach/router';
 import ThemeContext from './ThemeContext';
 import Home from './Home'
+
 const App = () => {
   const themeHook = useState('darkblue');
 
