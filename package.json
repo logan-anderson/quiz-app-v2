@@ -2,9 +2,9 @@
   "name": "complete-intro-to-react-v5",
   "version": "1.0.0",
   "description": "the Complete Intro to React, v5",
+  "homepage": "https://logan-anderson.github.io/quiz-app-v2/",
   "main": "src/App.js",
   "dependencies": {
-    "@frontendmasters/pet": "^1.0.3",
     "@reach/router": "^1.2.1",
     "postcss-modules": "^3.2.0",
     "react": "^16.8.4",
@@ -12,6 +12,7 @@
     "tailwindcss": "^1.5.1"
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/preset-env": "^7.4.3",
@@ -31,12 +32,15 @@
   "scripts": {
     "clear-build-cache": "rm -rf .cache/ dist/",
     "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "predeploy": "rm -rf dist && parcel build src/index.html --public-url /quiz-app-v2",
+    "deploy": "gh-pages -d dist",
     "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "tslint --project .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Brian Holt <btholt+complete-intro-to-react@gmail.com>",
+  "author": "Logan Anderson",
   "license": "Apache-2.0",
   "browserslist": [
     "last 2 Chrome versions"
