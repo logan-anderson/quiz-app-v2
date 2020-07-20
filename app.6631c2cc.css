@@ -1,0 +1,2 @@
+@tailwind base;@tailwind components;@tailwind utilities;@screen md{h1{@apply text-2xl}}@screen sm{h1{@apply text-lg}}.btn{@apply font-bold py-2 px-4 rounded}.btn-blue{@apply bg-blue-500 text-white}.btn-blue:hover{@apply bg-blue-700}.btn{@apply font-bold;@apply py-2;@apply px-4;@apply rounded;@apply m-3}.btn:hover{@apply bg-blue-700;transform:translateY(-1px)}
+/*# sourceMappingURL=/quiz-app-v2/app.6631c2cc.css.map */
