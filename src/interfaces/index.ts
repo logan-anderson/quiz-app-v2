@@ -1,5 +1,5 @@
 interface Category {
-    id: Number;
-    title: string;
-    clues_count: Number;
+  id: number;
+  title: string;
+  clues_count: number;
 }
